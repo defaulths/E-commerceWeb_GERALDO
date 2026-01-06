@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Green Valley Farmers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .breadcrumb {
+            padding: 15px 0;
+            background-color: #f9f9f9;
+            margin-bottom: 30px;
+        }
+        
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .related-products {
+            margin-top: 60px;
+            padding-top: 60px;
+            border-top: 2px solid #f0f0f0;
+        }
+        
+        .nutrition-info {
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .nutrition-item {
+            text-align: center;
+            padding: 15px;
+            background-color: white;
+            border-radius: var(--border-radius);
+        }
+        
+        .nutrition-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nutrition-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .stock-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        
+        .stock-high {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .stock-medium {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .stock-low {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .delivery-info {
+            background-color: #e8f4ff;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .delivery-info h4 {
+            color: var(--info-color);
+            margin-bottom: 10px;
+        }
+        
+        .delivery-info ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .delivery-info li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .delivery-info i {
+            color: var(--info-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-to-content">Skip to Content</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-seedling logo-icon"></i>
+                <span class="logo-text">Green Valley Farmers</span>
+            </a>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
+                    <li><a href="#" class="btn btn-accent">Farmer Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> &gt; 
+            <a href="products.html">Products</a> &gt; 
+            <span id="product-name-breadcrumb">Product Details</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Product Detail Section -->
+        <section class="product-detail">
+            <div class="container">
+                <div class="product-detail-container" id="product-detail-container">
+                    <!-- Product details will be loaded by JavaScript -->
+                    <div class="loading" style="grid-column: 1 / -1;">
+                        <i class="fas fa-spinner fa-spin"></i> Loading product details...
+                    </div>
+                </div>
+                
+                <!-- Delivery Information -->
+                <div class="delivery-info">
+                    <h4><i class="fas fa-shipping-fast"></i> Delivery Information</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Free delivery on orders over $50</li>
+                        <li><i class="fas fa-check-circle"></i> Same-day delivery for orders placed before 12 PM</li>
+                        <li><i class="fas fa-check-circle"></i> Contactless delivery available</li>
+                        <li><i class="fas fa-check-circle"></i> Delivery within 20-mile radius of farm</li>
+                    </ul>
+                </div>
+                
+                <!-- Nutrition Information (Sample) -->
+                <div class="nutrition-info">
+                    <h4>Nutritional Information (per serving)</h4>
+                    <div class="nutrition-grid">
+                        <div class="nutrition-item">
+                            <div class="nutrition-value">90</div>
+                            <div class="nutrition-label">Calories</div>
+                        </div>
+                        <div class="nutrition-item">
+                            <div class="nutrition-value">0g</div>
+                            <div class="nutrition-label">Fat</div>
+                        </div>
+                        <div class="nutrition-item">
+                            <div class="nutrition-value">21g</div>
+                            <div class="nutrition-label">Carbs</div>
+                        </div>
+                        <div class="nutrition-item">
+                            <div class="nutrition-value">2g</div>
+                            <div class="nutrition-label">Protein</div>
+                        </div>
+                        <div class="nutrition-item">
+                            <div class="nutrition-value">4g</div>
+                            <div class="nutrition-label">Fiber</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Products -->
+                <div class="related-products">
+                    <h3>You Might Also Like</h3>
+                    <div class="products-grid" id="related-products">
+                        <!-- Related products will be loaded by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i> Green Valley Farmers
+                    </div>
+                    <p>Connecting local farmers with communities through sustainable agriculture and fresh, organic produce since 2010.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <p>123 Farm Road, Green Valley, CA 90210</p>
+                    <p>Email: info@greenvalleyfarmers.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Green Valley Farmers. All rights reserved. | Designed with HCI principles for accessibility and user experience</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            
+            if (!productId) {
+                window.location.href = 'products.html';
+                return;
+            }
+            
+            const product = getProductById(parseInt(productId));
+            
+            if (!product) {
+                window.location.href = 'products.html';
+                return;
+            }
+            
+            // Update page title and breadcrumb
+            document.title = `${product.name} - Green Valley Farmers`;
+            document.getElementById('product-name-breadcrumb').textContent = product.name;
+            
+            // Determine stock indicator
+            let stockIndicator = '';
+            let stockClass = '';
+            if (product.stock > 20) {
+                stockIndicator = `<div class="stock-indicator stock-high">
+                    <i class="fas fa-check-circle"></i> In Stock (${product.stock} available)
+                </div>`;
+            } else if (product.stock > 5) {
+                stockIndicator = `<div class="stock-indicator stock-medium">
+                    <i class="fas fa-exclamation-triangle"></i> Low Stock (${product.stock} left)
+                </div>`;
+            } else {
+                stockIndicator = `<div class="stock-indicator stock-low">
+                    <i class="fas fa-exclamation-circle"></i> Almost Gone (${product.stock} left)
+                </div>`;
+            }
+            
+            // Load product details
+            const productDetailContainer = document.getElementById('product-detail-container');
+            productDetailContainer.innerHTML = `
+                <div class="product-detail-image">
+                    ${product.image}
+                </div>
+                <div class="product-detail-info">
+                    <h1>${product.name}</h1>
+                    <div class="product-rating">
+                        <span>★</span>
+                        <span>${product.rating} (${product.reviews} reviews)</span>
+                    </div>
+                    
+                    ${stockIndicator}
+                    
+                    <div class="product-price-large">${formatPrice(product.price)} ${product.unit}</div>
+                    <p>${product.description}</p>
+                    
+                    <div class="product-meta">
+                        <div class="product-meta-item">
+                            <span class="product-meta-label">Farm</span>
+                            <span class="product-meta-value">${product.farm}</span>
+                        </div>
+                        <div class="product-meta-item">
+                            <span class="product-meta-label">Harvest Date</span>
+                            <span class="product-meta-value">${new Date(product.harvestDate).toLocaleDateString('en-US', { 
+                                year: 'numeric', 
+                                month: 'long', 
+                                day: 'numeric' 
+                            })}</span>
+                        </div>
+                        <div class="product-meta-item">
+                            <span class="product-meta-label">Category</span>
+                            <span class="product-meta-value" style="text-transform: capitalize;">${product.category}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" id="decrease-qty" aria-label="Decrease quantity">-</button>
+                        <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="${product.stock}" 
+                               aria-label="Quantity">
+                        <button class="quantity-btn" id="increase-qty" aria-label="Increase quantity">+</button>
+                    </div>
+                    
+                    <div style="display: flex; gap: 15px; margin-top: 30px;">
+                        <button class="btn btn-accent btn-large" id="add-to-cart" 
+                                data-product-id="${product.id}" style="flex: 2;">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                        <a href="cart.html" class="btn btn-outline btn-large" style="flex: 1;">
+                            <i class="fas fa-shopping-cart"></i> View Cart
+                        </a>
+                    </div>
+                    
+                    <div class="product-description-full">
+                        <h3>Product Details</h3>
+                        <p>${product.details}</p>
+                        
+                        <h4 style="margin-top: 20px;">Storage Instructions</h4>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>Store in a cool, dry place away from direct sunlight</li>
+                            <li>Refrigerate after opening for maximum freshness</li>
+                            <li>Consume within 7 days of delivery for best quality</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            // Add event listeners
+            const decreaseBtn = document.getElementById('decrease-qty');
+            const increaseBtn = document.getElementById('increase-qty');
+            const quantityInput = document.getElementById('quantity');
+            const addToCartBtn = document.getElementById('add-to-cart');
+            
+            decreaseBtn.addEventListener('click', () => {
+                let value = parseInt(quantityInput.value);
+                if (value > 1) {
+                    quantityInput.value = value - 1;
+                }
+            });
+            
+            increaseBtn.addEventListener('click', () => {
+                let value = parseInt(quantityInput.value);
+                if (value < product.stock) {
+                    quantityInput.value = value + 1;
+                } else {
+                    showToast('warning', 'Cannot add more than available stock.');
+                }
+            });
+            
+            quantityInput.addEventListener('change', () => {
+                let value = parseInt(quantityInput.value);
+                if (value < 1) quantityInput.value = 1;
+                if (value > product.stock) {
+                    quantityInput.value = product.stock;
+                    showToast('warning', `Maximum available quantity is ${product.stock}.`);
+                }
+            });
+            
+            addToCartBtn.addEventListener('click', () => {
+                const quantity = parseInt(quantityInput.value);
+                const originalText = addToCartBtn.innerHTML;
+                
+                if (addToCart(product.id, quantity)) {
+                    addToCartBtn.innerHTML = '<i class="fas fa-check"></i> Added to Cart!';
+                    addToCartBtn.style.backgroundColor = 'var(--success-color)';
+                    
+                    showToast('success', `${quantity} ${product.name} added to cart!`);
+                    updateCartCount();
+                    
+                    setTimeout(() => {
+                        addToCartBtn.innerHTML = originalText;
+                        addToCartBtn.style.backgroundColor = '';
+                    }, 1500);
+                } else {
+                    showToast('error', 'Failed to add product to cart. Please check stock availability.');
+                }
+            });
+            
+            // Load related products (same category, excluding current product)
+            loadRelatedProducts(product);
+        });
+        
+        function loadRelatedProducts(currentProduct) {
+            const relatedProductsContainer = document.getElementById('related-products');
+            if (!relatedProductsContainer) return;
+            
+            // Get 3 random products from same category (excluding current product)
+            const relatedProducts = products
+                .filter(p => p.category === currentProduct.category && p.id !== currentProduct.id)
+                .sort(() => 0.5 - Math.random())
+                .slice(0, 3);
+            
+            if (relatedProducts.length === 0) {
+                relatedProductsContainer.innerHTML = '<p>No related products found.</p>';
+                return;
+            }
+            
+            let html = '';
+            relatedProducts.forEach(product => {
+                html += `
+                    <div class="product-card" data-category="${product.category}">
+                        <div class="product-image">
+                            ${product.image}
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <p class="product-description">${product.description.substring(0, 80)}...</p>
+                            <div class="product-price">${formatPrice(product.price)} ${product.unit}</div>
+                            <a href="product-detail.html?id=${product.id}" class="btn btn-full">View Details</a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            relatedProductsContainer.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
